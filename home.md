@@ -18,6 +18,8 @@ The library provides support for
 * Human input devices (game controllers)
 * ...
 
+Practical uses
+* Thread messaging
 # Usage
 ## Create the main event loop
 Create the main event loop and launch the first function
