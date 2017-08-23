@@ -24,7 +24,7 @@ The library provides support for
 #include <stream>
 #include <libsev/EventLoop.h>
 
-void f(EventLoop *el)
+void f(sev::EventLoop *el)
 {
   // Do something
   std::cout << "Hello world\n";
@@ -36,7 +36,7 @@ void f(EventLoop *el)
 int main()
 {
   // Create main event loop
-  EventLoop *el = new EventLoop();
+  sev::EventLoop *el = new sev::EventLoop();
   
   // Push function call onto queue
   el->push(f);
@@ -47,5 +47,26 @@ int main()
   // Clean up
   delete el;
   el = NULL;
+}
+```
+## Create a main event loop (shorthand)
+```c_cpp
+#include <stream>
+#include <memory>
+#include <libsev/EventLoop.h>
+
+void f(EventLoop *el)
+{
+  // Do something
+  std::cout << "Hello world\n";
+  
+  // Stop event loop
+  el->stop();
+}
+
+int main()
+{
+  // Create event loop
+  std::make_unique<sev::EventLoop>()->runSync(f);
 }
 ```
