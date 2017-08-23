@@ -84,7 +84,7 @@ void f(sev::EventLoop *el)
 }
 ```
 ## Order of operations
-All events are processed in the order that they are pushed onto the event loop queue. In other words, it's a fifo queue. When using a single threaded event loop, it is guaranteed that all (except fiber) events pushed onto the event loop have finished running synchronously. The EventLoop::push function returns immediately.
+All events are processed in the order that they are pushed onto the event loop queue. In other words, it's a fifo queue. When using a single threaded event loop, it is guaranteed that all (except fiber) events previously onto the event loop have finished running synchronously when an event runs, and it is similarly guaranteed that the currently running event finishes running before any pushed events start running. The `EventLoop::immediate(...)` function returns immediately.
 
 ```c_cpp
 #include <stream>
