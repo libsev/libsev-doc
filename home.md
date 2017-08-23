@@ -107,3 +107,39 @@ Output
 
 ## Thread messaging
 A practical application of using event loops is the ability to easily message accross threads without worrying too much about synchronisation.
+```c_cpp
+#include <stream>
+#include <memory>
+#include <libsev/EventLoop.h>
+
+void f(EventLoop *el1, EventLoop *el2)
+{
+  std::cout << "Function running on second event loop thread\n";
+  el1->immediate([el1, el2]() -> {
+    std::cout << "Lambda running on first event loop thread\n";
+    el2->immediate([el1, el2]() -> {
+      std::cout << "Lambda running on second event loop thread\n";
+      el2->stop();
+    });
+    el1->stop();
+  });
+}
+
+int main()
+{
+  // Create and run first event loop asynchronously
+  auto el1 = std::make_unique<sev::EventLoop>();
+  sev::EventLoop *el1p = el1.get();
+  el1->run();
+  
+  // Create event loop, run synchronously, and call function
+  std::make_unique<sev::EventLoop>()->runSync([el1p](sev::EventLoop *el2) -> {
+    f(el1p, el2);
+  });
+  std::cout << "Second event loop finished\n";
+  
+  // Wait for first event loop to finish
+  el1->join();
+  std::cout << "First event loop finished\n";
+}
+```
