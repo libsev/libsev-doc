@@ -19,7 +19,8 @@ The library provides support for
 * ...
 
 # Usage
-## Create a main event loop
+## Create the main event loop
+Create the main event loop and launch the first function
 ```c_cpp
 #include <stream>
 #include <libsev/EventLoop.h>
@@ -49,7 +50,7 @@ int main()
   el = NULL;
 }
 ```
-## Create a main event loop (shorthand)
+Or in one line using the shorthand version
 ```c_cpp
 #include <stream>
 #include <memory>
@@ -70,3 +71,21 @@ int main()
   std::make_unique<sev::EventLoop>()->runSync(f);
 }
 ```
+## Push a lambda onto the event loop
+```c_cpp
+#include <stream>
+#include <libsev/EventLoop.h>
+
+void f(sev::EventLoop *el)
+{
+  el->push([el]() -> {
+    std::cout << "Hello world\n";
+  });
+}
+```
+## Order of operations
+All events are processed in the order that they are pushed onto the event loop queue. In other words, it's a fifo queue. When using a single threaded event loop, it is guaranteed that all (except fiber) events pushed onto the event loop have finished running synchronously. The EventLoop::push function returns immediately.
+
+
+## Thread messaging
+A practical application of using event loops is the ability to easily message accross threads without worrying too much about synchronisation.
