@@ -58,7 +58,7 @@ Or in one line using the shorthand version
 #include <memory>
 #include <libsev/EventLoop.h>
 
-void f(EventLoop *el)
+void f(sev::EventLoop *el)
 {
   // ...
 }
@@ -66,7 +66,7 @@ void f(EventLoop *el)
 int main()
 {
   // Create event loop, run synchronously, and call function
-  std::make_unique<sev::EventLoop>()->runSync([el]() -> {
+  std::make_unique<sev::EventLoop>()->runSync([](sev::EventLoop *el) -> {
     f(el);
   });
 }
