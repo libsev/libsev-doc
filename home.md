@@ -78,7 +78,7 @@ int main()
 
 void f(sev::EventLoop *el)
 {
-  el->push([el]() -> {
+  el->immediate([el]() -> {
     std::cout << "Hello world\n";
   });
 }
