@@ -40,7 +40,7 @@ int main()
   sev::EventLoop *el = new sev::EventLoop();
   
   // Push function call onto queue
-  el->push(f);
+  el->immediate(f);
   
   // Run event loop synchronously on main thread
   el->runSync();
@@ -86,6 +86,33 @@ void f(sev::EventLoop *el)
 ## Order of operations
 All events are processed in the order that they are pushed onto the event loop queue. In other words, it's a fifo queue. When using a single threaded event loop, it is guaranteed that all (except fiber) events pushed onto the event loop have finished running synchronously. The EventLoop::push function returns immediately.
 
+```c_cpp
+void f(sev::EventLoop *el)
+{
+  std::cout << "1\n";
+  el->immediate([el]() -> {
+    std::cout << "3\n";
+    el->immediate[el]()-> {
+      std::cout << "6\n";
+    };
+    std::cout << "4\n";
+  });
+  el->immediate([el]() -> {
+    std::cout << "5\n";
+  });
+  std::cout << "2\n";
+}
+```
+Output
+
+```text
+1
+2
+3
+4
+5
+6
+```
 
 ## Thread messaging
 A practical application of using event loops is the ability to easily message accross threads without worrying too much about synchronisation.
