@@ -87,6 +87,9 @@ void f(sev::EventLoop *el)
 All events are processed in the order that they are pushed onto the event loop queue. In other words, it's a fifo queue. When using a single threaded event loop, it is guaranteed that all (except fiber) events pushed onto the event loop have finished running synchronously. The EventLoop::push function returns immediately.
 
 ```c_cpp
+#include <stream>
+#include <libsev/EventLoop.h>
+
 void f(sev::EventLoop *el)
 {
   std::cout << "1\n";
