@@ -49,7 +49,7 @@ int main()
   el = NULL;
 }
 ```
-### Create a main event loop (shorthand)
+## Create a main event loop (shorthand)
 ```c_cpp
 #include <stream>
 #include <memory>
