@@ -2,4 +2,4 @@
 <!-- SUBTITLE: Simple Event Loop -->
 
 # Links
-(Wiki)[https://libsev.no-break.space]
+[Wiki](https://libsev.no-break.space)
