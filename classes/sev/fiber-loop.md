@@ -10,12 +10,11 @@ Inherits [sev::EventLoop](/classes/sev/event-loop)
 ## Event queue
 * void [fiber](/classes/sev/fiber-loop/fiber)(sev::FiberFunction f)
 ## Fiber synchronization
-* void [yieldAwait](/classes/sev/fiber-loop/yield)()
+* void [yieldAwait](/classes/sev/fiber-loop/yield)(int nb = 1)
 * void [yieldImmediate](/classes/sev/fiber-loop/yield)()
 * void [yieldDeferred](/classes/sev/fiber-loop/yield)()
-
+* void [respond](/classes/sev/fiber-loop/respond)(int nb = 1)
 # Usage
-
 ```c_cpp
 void f(sev::FiberEvent *fe)
 {
