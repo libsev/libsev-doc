@@ -40,7 +40,9 @@ int main()
   sev::EventLoop *el = new sev::EventLoop();
   
   // Push function call onto queue
-  el->immediate(f);
+  el->immediate([el]() -> {
+	  f(el);
+	});
   
   // Run event loop synchronously on main thread
   el->runSync();
@@ -58,29 +60,15 @@ Or in one line using the shorthand version
 
 void f(EventLoop *el)
 {
-  // Do something
-  std::cout << "Hello world\n";
-  
-  // Stop event loop
-  el->stop();
+  // ...
 }
 
 int main()
 {
-  // Create event loop
-  std::make_unique<sev::EventLoop>()->runSync(f);
-}
-```
-## Push a lambda onto the event loop
-```c_cpp
-#include <stream>
-#include <libsev/EventLoop.h>
-
-void f(sev::EventLoop *el)
-{
-  el->immediate([el]() -> {
-    std::cout << "Hello world\n";
-  });
+  // Create event loop, run synchronously, and call function
+  std::make_unique<sev::EventLoop>()->runSync([el]() -> {
+	  f(el);
+	});
 }
 ```
 ## Order of operations
