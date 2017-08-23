@@ -8,7 +8,8 @@
 Inherits [sev::EventLoop](/classes/sev/event-loop)
 # Functions
 ## Event queue
-* void [fiber](/classes/sev/fiber-loop/fiber)(sev::FiberFunction f)
+* void [immediate](/classes/sev/fiber-loop/fiber)(sev::FiberFunction f)
+* void [deferred](/classes/sev/fiber-loop/fiber)(sev::FiberFunction f)
 ## Fiber synchronization
 * void [yieldAwait](/classes/sev/fiber-loop/yield)(int nb = 1)
 * void [yieldImmediate](/classes/sev/fiber-loop/yield)()
