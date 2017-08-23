@@ -5,7 +5,9 @@
 [Repository](https://github.com/libsev/libsev)
 
 # About libsev
-Libsev is an event loop library providing support for
+Libsev is a library to make lots of code run at the same time in a very specific way, focused on simplicity of use and performance.
+
+The library provides support for
 * Single threaded event loops
 * Thread pooled event loops
 * Event callbacks
