@@ -18,4 +18,7 @@ Inherits [sev::EventLoopBase](/classes/sev/event-loop-base)
 * void [join](/classes/sev/event-loop/join)(bool empty)
 ## Event queue
 * void [immediate](/classes/sev/event-loop/immediate)(sev::EventFunction f)
+* void [deferred](/classes/sev/event-loop/deferred)(sev::EventFunction f) // push function into deferred queue
+## Queue control
+* void [advance](/classes/sev/event-loop/advance)() // flushes deferred queue into immediate queue
 * void [clear](/classes/sev/event-loop/clear)()
