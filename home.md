@@ -25,7 +25,7 @@ Practical uses
 Create the main event loop and launch the first function
 ```c_cpp
 #include <stream>
-#include <libsev/EventLoop.h>
+#include <libsev/event_loop.h>
 
 void f(sev::EventLoop *el)
 {
@@ -58,7 +58,7 @@ Or in one line using the shorthand version
 ```c_cpp
 #include <stream>
 #include <memory>
-#include <libsev/EventLoop.h>
+#include <libsev/event_loop.h>
 
 void f(sev::EventLoop *el)
 {
@@ -78,7 +78,7 @@ All events are processed in the order that they are pushed onto the event loop q
 
 ```c_cpp
 #include <stream>
-#include <libsev/EventLoop.h>
+#include <libsev/event_loop.h>
 
 void f(sev::EventLoop *el)
 {
@@ -112,7 +112,7 @@ A practical application of using event loops is the ability to easily message ac
 ```c_cpp
 #include <stream>
 #include <memory>
-#include <libsev/EventLoop.h>
+#include <libsev/event_loop.h>
 
 void f(EventLoop *el1, EventLoop *el2)
 {
