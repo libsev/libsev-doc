@@ -17,3 +17,35 @@ The library provides support for
 * Fibers
 * Human input devices (game controllers)
 * ...
+
+# Usage
+## Create a main event loop
+```c_cpp
+#include <stream>
+#include <libsev/EventLoop.h>
+
+void f(EventLoop *el)
+{
+  // Do something
+  std::cout << "Hello world\n";
+  
+  // Stop event loop
+  el->stop();
+}
+
+int main()
+{
+  // Create main event loop
+  EventLoop *el = new EventLoop();
+  
+  // Push function call onto queue
+  el->push(f);
+  
+  // Run event loop synchronously on main thread
+  el->runSync();
+  
+  // Clean up
+  delete el;
+  el = NULL;
+}
+```
