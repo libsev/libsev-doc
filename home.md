@@ -41,8 +41,8 @@ int main()
   
   // Push function call onto queue
   el->immediate([el]() -> {
-	  f(el);
-	});
+    f(el);
+  });
   
   // Run event loop synchronously on main thread
   el->runSync();
@@ -67,8 +67,8 @@ int main()
 {
   // Create event loop, run synchronously, and call function
   std::make_unique<sev::EventLoop>()->runSync([el]() -> {
-	  f(el);
-	});
+    f(el);
+  });
 }
 ```
 ## Order of operations
