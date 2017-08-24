@@ -21,13 +21,14 @@ The library provides support for
 Practical uses
 * Thread messaging
 # Usage
+A lightweight version sev_lite is available as a header-only library, with only a minimal event loop feature set. The full sev library can be dropped in as a replacement, using identical API.
 ## Create the main event loop
-Create the main event loop and launch the first function
+Create the main event loop and launch the first function using the lightweight version of the library.
 ```c_cpp
 #include <stream>
-#include <libsev/event_loop.h>
+#include <sev_lite/event_loop.h>
 
-void f(sev::EventLoop *el)
+void f(sev_lite::EventLoop *el)
 {
   // Do something
   std::cout << "Hello world\n";
@@ -39,7 +40,7 @@ void f(sev::EventLoop *el)
 int main()
 {
   // Create main event loop
-  sev::EventLoop *el = new sev::EventLoop();
+  sev_lite::EventLoop *el = new sev_lite::EventLoop();
   
   // Push function call onto queue
   el->immediate([el]() -> {
@@ -54,23 +55,21 @@ int main()
   el = NULL;
 }
 ```
-Or in one line using the shorthand version
+Or in one line using the shorthand version provided by the full sev library.
 ```c_cpp
 #include <stream>
 #include <memory>
-#include <libsev/event_loop.h>
+#include <sev/main_event_loop.h>
 
-void f(sev::EventLoop *el)
+void f(sev::EventLoop *el, const int argc, const char *argv[])
 {
   // ...
 }
 
 int main()
 {
-  // Create event loop, run synchronously, and call function
-  std::make_unique<sev::EventLoop>()->runSync([](sev::EventLoop *el) -> {
-    f(el);
-  });
+  // Create main event loop, run synchronously, and call function
+  MainEventLoop::main(f);
 }
 ```
 ## Order of operations
@@ -80,7 +79,7 @@ In other words, a function passed to `EventLoop::immediate(...)` in the same sin
 
 ```c_cpp
 #include <stream>
-#include <libsev/event_loop.h>
+#include <sev/event_loop.h>
 
 void f(sev::EventLoop *el)
 {
@@ -114,7 +113,7 @@ A practical application of using event loops is the ability to easily message ac
 ```c_cpp
 #include <stream>
 #include <memory>
-#include <libsev/event_loop.h>
+#include <sev/event_loop.h>
 
 void f(EventLoop *el1, EventLoop *el2)
 {
