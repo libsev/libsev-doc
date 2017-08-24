@@ -21,7 +21,7 @@ The library provides support for
 Practical uses
 * Thread messaging
 # Usage
-A lightweight version sev_lite is available as a header-only library, with only a minimal event loop feature set. The full sev library can be dropped in as a replacement, using identical API.
+A lightweight version sev_lite is available as a header-only library, with only a minimal event loop feature set. The full sev library can be dropped in as a replacement, using identical API. The libraries should not be used together, however.
 ## Create the main event loop
 Create the main event loop and launch the first function using the lightweight version of the library.
 ```c_cpp
