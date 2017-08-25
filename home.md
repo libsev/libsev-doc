@@ -21,7 +21,7 @@ The library provides support for
 
 Practical uses
 * Thread messaging
-# Usage
+# Getting started
 A lightweight version sev_lite is available as a header-only library, with only a minimal event loop feature set. The full sev library can be dropped in as a replacement, using identical API. The libraries should not be used together, however.
 ## Create the main event loop
 Create the main event loop and launch the first function using the lightweight version of the library.
@@ -58,19 +58,16 @@ int main()
 ```
 Or in one line using the shorthand version provided by the full sev library.
 ```c_cpp
-#include <stream>
-#include <memory>
 #include <sev/main_event_loop.h>
 
-void f(sev::EventLoop *el, const int argc, const char *argv[])
+void f(sev::EventLoop *el, int argc, const char *argv[])
 {
-  // ...
+	// ...
 }
 
-int main()
+void main(int argc, const char *argv[])
 {
-  // Create main event loop, run synchronously, and call function
-  MainEventLoop::main(f);
+	MainEventLoop::main(f, argc, argv);
 }
 ```
 ## Order of operations
