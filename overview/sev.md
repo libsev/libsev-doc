@@ -24,3 +24,17 @@
 
 # SEv Web
 * WebSocket
+
+# SEv Input
+* Mouse
+* Keyboard
+* Game controller
+
+# SEv Graphics
+* Window creation
+* Display management
+
+# SEv Audio
+* Audio stream interface
+* Sample rate conversion
+* WAV file format stream
