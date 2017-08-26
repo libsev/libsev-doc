@@ -4,7 +4,7 @@
 # Overview
 [Repository](https://github.com/libsev/libsev)
 [![Build Status](https://travis-ci.org/libsev/libsev.svg?branch=develop)](https://travis-ci.org/libsev/libsev)
-[C++ Naming Conventions](/cpp/naming-conventions.md)
+[C++ Naming Conventions](/cpp/naming-conventions)
 
 # About libsev
 Libsev is a library to make lots of code run at the same time in a very specific way, focused on simplicity of use and performance.
