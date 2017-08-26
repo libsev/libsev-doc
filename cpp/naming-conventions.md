@@ -157,7 +157,7 @@ enum class Color
 };
 ```
 # Bit field enumerations
-(This should be part of structure conventions page.) Bit field enumerations should provide their own operators as needed.
+(This should be part of structure conventions page. Or rename to style conventions, with subtitle naming and structure conventions.) Bit field enumerations should provide their own operators as needed.
 
 ```c_cpp
 #include <type_traits>
