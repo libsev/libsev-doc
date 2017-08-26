@@ -40,6 +40,23 @@ struct Point { };
 Private member variables are prefixed with `m\_`, global variables with `g\_`, static and anonymous namespace variables with `s\_`, non-local static const variables with `c\_`. Camel case following an underscore always continues with \_UpperCamelCase.
 
 ```c_cpp
+class PlayerController
+{
+private:
+	Point m_Position;
+	
+};
+```
+
+Public member variables are in UpperCamelCase without prefix.
+
+```c_cpp
+struct Point
+{
+public:
+	float X, Y;
+	
+};
 ```
 
 Exposed C-style interfaces of functions start with the namespace in uppercase optionally followed by the classname in UpperCamelCase without modification, and then followed by the function name in lowerCamelCase without modification.
