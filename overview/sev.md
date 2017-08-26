@@ -33,8 +33,12 @@
 # SEv Graphics
 * Window creation
 * Display management
+* Vulkan interoperability
 
 # SEv Audio
 * Audio stream interface
 * Sample rate conversion
 * WAV file format stream
+
+# SEv Interop
+* Header-only interoperability with other event libraries
