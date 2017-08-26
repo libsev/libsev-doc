@@ -83,6 +83,17 @@ void setIOBuffer(IOBuffer *iOBuffer); // This would be an interface class referr
 #include <i_o_buffer.h> // O Buffer interface
 ```
 
+# Tabs or spaces
+Use tabs for indentation and spaces for alignment. Tabs may be either 2, 4 or 8 spaces, it does not really matter. When aligning, the aligned parts must use the same number of tabs.
+
+```
+enum░class░Colors
+{
+▓▓▓▓Value░░░░░░=░1;
+▓▓▓▓OtherValue░=░2;
+}
+```
+
 # Getters and setters
 Variable names must not be verbs. Do not include `get` as part of the getter function name.
 
