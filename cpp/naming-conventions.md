@@ -28,6 +28,17 @@ Header guards are in uppercase with underscore separation, are prefixed with the
 #define SEV_LITE_EVENT_LOOP_HOOP_H
 #endif /* #ifndef SEV_LITE_EVENT_LOOP_HOOP_H */
 ```
+
+# Abbreviations
+Common abbreviations should not be fully capitalized. Likewise, abbreviations should not be separated by underscores either.
+
+```c_cpp
+void setIoBuffer(IoBuffer *ioBuffer); // Correct for a class referring to an IO Buffer
+void setIOBuffer(IOBuffer $iOBuffer); // This would be an interface class referring to an O Buffer
+#include <io_buffer.h> // IO Buffer class
+#include <i_o_buffer.h> // O Buffer interface
+```
+
 # Getters and setters
 Variable names must not be verbs. Do not include `get` as part of the getter function name.
 
