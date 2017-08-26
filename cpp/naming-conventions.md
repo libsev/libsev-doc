@@ -39,9 +39,7 @@ Choosing between having an object or verb is first, depends on the context.
 bool m_ShouldPlayVideo;
 bool m_ShouldPlayAudio;
 bool m_ShouldPlayGame;
-```
 
-```c_cpp
 bool m_HasVideoPlayed;
 bool m_HasVideoPaused;
 bool m_HasVideoStopped;
