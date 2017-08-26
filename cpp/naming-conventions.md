@@ -1,7 +1,6 @@
 <!-- TITLE: C++ Naming Conventions -->
 <!-- SUBTITLE: A quick summary of Naming Conventions -->
 
-# C++ Naming Conventions
 # Casing
 Public and private functions and local variables are in lowerCamelCase.
 
