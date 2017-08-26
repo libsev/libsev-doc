@@ -11,7 +11,7 @@ void setSize(size_t size);
 ```
 
 # Booleans
-Boolean variable names must not be verbs, but may be past tense verbes. This in order to avoid getters that sound like functions. Names must also not imply another variable type.
+Boolean variable names and functions that calculate a boolean must not be verbs, but may be past tense verbes. This in order to avoid getters that sound like functions. Names must also not imply another variable type. Functions which merely return a boolean as success result do not apply to this rule.
 
 ```c_cpp
 bool m_CallParent; // Not okay. Getter will conflict with function bool callParent()
@@ -33,4 +33,16 @@ bool m_IsRectangular; // Okay, but prefer m_Rectangular
 bool m_IsRectangle; // Okay
 ```
 
-Functions which merely return a boolean as success result do not apply to this rule.
+Choosing between having an object or verb is first, depends on the context.
+
+```c_cpp
+bool m_ShouldPlayVideo;
+bool m_ShouldPlayAudio;
+bool m_ShouldPlayGame;
+```
+
+```c_cpp
+bool m_HasVideoPlayed;
+bool m_HasVideoPaused;
+bool m_HasVideoStopped;
+```
