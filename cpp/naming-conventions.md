@@ -161,12 +161,14 @@ enum class Color
 
 ```c_cpp
 #include <type_traits>
+
 enum class ColorMask
 {
 	Red =   1 << 1,
 	Green = 1 << 2,
 	Blue =  1 << 3
 };
+
 inline ColorMask operator | (const ColorMask l, const ColorMask r)
 {
     return (ColorMask)(static_cast<const std::underlying_type<ColorMask>>(l)
