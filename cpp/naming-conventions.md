@@ -177,7 +177,7 @@ bool m_PlayVideo; // Not okay. Getter will conflict with function bool playVideo
 bool m_VideoPlayed; // Okay, but ambigious whether a return status or an expectation
 bool m_PlayedVideo; // Okay, but ambigious whether a return status or an expectation
 bool m_Rectangular; // Okay
-bool m_Rectangle; // Not okay, implies a Rectangle type rather than a bool
+bool m_Rectangle; // Not okay, implies a Rectangle value type rather than a bool
 ```
 
 The following verbs: `is`, `must`, `can`, `will`, `has`, and `should`, however, are allowed and recommended only for booleans, and functions that return boolean variables. These should therefore, also not be used for non-boolean returning functions or variables. Verbs should be omitted if there is no chance for ambiguity.
@@ -187,7 +187,7 @@ bool m_HasCalledParent; // Okay
 bool m_ShouldCallParent; // Okay
 bool m_MustCallParent; // Okay
 bool m_IsRectangular; // Okay, but prefer m_Rectangular
-bool m_IsRectangle; // Okay
+bool m_IsRectangle; // Okay, may imply that a variant is of type Rectangle, prefer m_Rectangular when referring to the shape
 ```
 
 Choosing between having an object or verb is first, depends on the context.
