@@ -186,8 +186,8 @@ The following verbs: `is`, `must`, `can`, `will`, `has`, and `should`, however, 
 bool m_HasCalledParent; // Okay
 bool m_ShouldCallParent; // Okay
 bool m_MustCallParent; // Okay
-bool m_IsRectangular; // Okay, but prefer m_Rectangular
-bool m_IsRectangle; // Okay, may imply that a variant is of type Rectangle, prefer m_Rectangular when referring to the shape
+bool m_IsRectangular; // Not so okay, prefer m_Rectangular
+bool m_IsRectangle; // Okay, may be used to imply that a variant is of type Rectangle, prefer m_Rectangular when referring to the shape
 ```
 
 Choosing between having an object or verb is first, depends on the context.
@@ -200,6 +200,23 @@ bool m_ShouldPlayGame;
 bool m_HasVideoPlayed;
 bool m_HasVideoPaused;
 bool m_HasVideoStopped;
+```
+
+Boolean names may be states of being. These are generally words that can be placed in "I am ..." and "It is ...". In most cases these can possibly start with `Is`, and it is preferred to omit the `Is` as stated previously if there is no ambiguity.
+
+```c_cpp;
+bool m_Active;
+bool m_Rectangular
+bool m_Happy;
+bool m_Large, m_Small, m_Effortless;
+bool m_Amazing, m_Perfect, m_Whole;
+bool m_InLove;
+```
+
+Some of these may be verbs, this is okay too.
+
+```c_cpp;
+bool m_Enabled;
 ```
 
 # Enumerations
