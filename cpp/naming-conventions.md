@@ -129,7 +129,9 @@ When a scope is purely for object lifetime, and is not the result of an expressi
 void f(int i)
 {
 	while (waiting(i)); // Loop until no longer waiting
-	; { // Lock after the loop. Protected against accidental ommision of semicolon after the previous line
+	; { // Protect against accidental ommision of semicolon after the while loop
+	    // and clarify that the semicolon after the while loop is in fact intentional
+		// Lock after the loop
 		std::unique_lock<std::mutex> lock(m);
 		call(i);
 	}
