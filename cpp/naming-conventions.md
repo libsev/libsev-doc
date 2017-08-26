@@ -2,6 +2,32 @@
 <!-- SUBTITLE: A quick summary of Naming Conventions -->
 
 # C++ Naming Conventions
+# Casing
+Public and private functions and local variables are in lowerCamelCase.
+
+```c_cpp
+bool playVideo(int fileIndex);
+```
+
+Namespaces are in lowercase with underscore separation.
+
+```c_cpp
+namespace sev_lite { }
+```
+
+Definitions are in uppercase with underscore separation, and are prefixed with the namespace in uppercase.
+
+```c_cpp
+#define SEV_LITE_OPTION_ENABLED
+```
+
+Header guards are in uppercase with underscore separation, are prefixed with the namespace in uppercase, followed by the filename in uppercase, and ended with an \_H suffix. The statements #else and #endif must be followed by a C-style comment of the original #if statement.
+
+```c_cpp
+#ifndef SEV_LITE_EVENT_LOOP_HOOP_H
+#define SEV_LITE_EVENT_LOOP_HOOP_H
+#endif /* #ifndef SEV_LITE_EVENT_LOOP_HOOP_H */
+```
 # Getters and setters
 Variable names must not be verbs. Do not include `get` as part of the getter function name.
 
