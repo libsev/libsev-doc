@@ -23,7 +23,7 @@ bool m_Rectangular; // Okay
 bool m_Rectangle; // Not okay, implies a Rectangle type rather than a bool
 ```
 
-The following verbs: `is`, `must`, `can`, `will`, `has`, and `should`, however, are allowed and recommended only for booleans, and functions that return boolean variables. These should therefore, also not be used for non-boolean returning functions or variables.
+The following verbs: `is`, `must`, `can`, `will`, `has`, and `should`, however, are allowed and recommended only for booleans, and functions that return boolean variables. These should therefore, also not be used for non-boolean returning functions or variables. Verbs should be omitted if there is no chance for ambiguity.
 
 ```c_cpp
 bool m_HasCalledParent; // Okay
