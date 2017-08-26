@@ -4,6 +4,7 @@
 # Overview
 [Repository](https://github.com/libsev/libsev)
 [C++ Naming Conventions](/cpp/naming-conventions)
+[Library Organization](/overview/sev)
 
 [![Build Status](https://travis-ci.org/libsev/libsev.svg?branch=develop)](https://travis-ci.org/libsev/libsev)
 
