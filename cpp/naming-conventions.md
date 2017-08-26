@@ -36,7 +36,7 @@ class IStream { };
 struct Point { };
 ```
 
-Private member variables are prefixed with `m\_`, global variables with `g\_`, static and anonymous namespace variables with `s\_`, non-local static const variables with `c\_`. Camel case following an underscore always continues with \_UpperCamelCase. Private function names start with a `p\_` and continue with lowerCamelCase.
+Private and protected member variables are prefixed with `m\_`, global variables with `g\_`, static and anonymous namespace variables with `s\_`, non-local static const variables with `c\_`. Camel case following an underscore always continues with \_UpperCamelCase. Private and protected function names start with a `p\_` and continue with lowerCamelCase.
 
 ```c_cpp
 bool g_SystemFlag;
