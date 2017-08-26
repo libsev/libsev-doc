@@ -1,5 +1,5 @@
 <!-- TITLE: SEv Library -->
-<!-- SUBTITLE: Simple Event Loop Library (libsev) -->
+<!-- SUBTITLE: Simple Event Loop Library -->
 
 # Overview
 [Repository](https://github.com/libsev/libsev)
