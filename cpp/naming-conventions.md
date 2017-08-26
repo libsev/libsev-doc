@@ -95,7 +95,7 @@ enum░class░Color
 ```
 
 # Getters and setters
-Variable names must not be verbs. Do not include `get` as part of the getter function name.
+Variable names must not be verbs. Do not include `get` as part of the getter function name. Note that while "size" can technically be used as a verb, it is not commonly used as such in programming, as the verb "resize" is more commonly used for such operation. Depending on the context this may vary.
 
 ```c_cpp
 size_t size();
