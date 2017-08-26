@@ -172,6 +172,6 @@ enum class ColorMask
 inline ColorMask operator | (const ColorMask l, const ColorMask r)
 {
     return (ColorMask)(static_cast<const std::underlying_type<ColorMask>>(l)
-			| static_cast<const std::underlying_type<ColorMask>>(r));
+		 | static_cast<const std::underlying_type<ColorMask>>(r));
 }
 ```
