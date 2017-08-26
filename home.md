@@ -1,4 +1,4 @@
-<!-- TITLE: libsev -->
+<!-- TITLE: SEv Library -->
 <!-- SUBTITLE: Simple Event Loop Library -->
 
 # Overview
