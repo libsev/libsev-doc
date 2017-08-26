@@ -86,12 +86,46 @@ void setIOBuffer(IOBuffer *iOBuffer); // This would be an interface class referr
 # Tabs and spaces
 Use tabs for indentation and spaces for alignment. Tabs may be either 2, 4 or 8 spaces, it does not really matter. When aligning, the aligned parts must use the same number of tabs.
 
-```
+```c_cpp
 enum░class░Color
 {
 ▓▓▓▓Blue░░░░░░=░1;
 ▓▓▓▓Turquoise░=░2;
 };
+```
+
+# Expression spacing an newlines
+Spaces before opening brackets and after closing brackets when preceeded or followed by an operator. No spaces between opening brackets. No spaces between closing brackets. No spaces after an opening bracket. No spaces before a closing bracket. Space after a comma, no space before a comma. Space after a semicolon, no space before a semicolon. No space between unary operators and literals or variables. Space between binary operators and literals or variables. No spaces surrounding dot and arrow operators. Space surrounding arrow symbol for lambda. No space before the round starting bracket of a function call. No space after the last character on a line. Indentation for definitions goes after the hash. Pointer and reference marker belong to the variable name, so no space between them either. Scope brackets go on a new line. Brackets that are part of an expression, such as an array or lambda do not.
+
+```c_cpp
+#ifdef SEV_DEFINES_NULL
+#	define NULL nullptr
+#endif
+void function(const char *str, const std::string &s, char *const buffer)
+{
+	if (str[0] && s.c_str()[0])
+	{
+		auto lambda = [b = buffer]() -> void {
+			b[0] = (1 + b[0]);
+		});
+	}
+	char *stringArray[] = { 
+		"Hello",
+		"World"
+	};
+	int numberArray[] = { 0, 1, 2, 3 };
+	std::vector<int> vec;
+	vec.push_back(std::min<int>(numberArray[0], 50));
+}
+```
+
+# Auto
+Only use auto when the type is explicitly defined and readable within the same line. Otherwise, be explicit.
+# Null
+Use NULL, not nullptr. The library redefines NULL as nullptr. Nullptr is an ambigious name, since it might just as well mean a pointer to null. Null is what it is.
+
+```c_cpp
+sev::EventLoop *eventLoop = NULL;
 ```
 
 # Getters and setters
