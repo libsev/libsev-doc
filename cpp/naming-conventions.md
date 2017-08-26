@@ -42,6 +42,13 @@ Private member variables are prefixed with `m\_`, global variables with `g\_`, s
 ```c_cpp
 ```
 
+Exposed C-style interfaces of functions start with the namespace in uppercase optionally followed by the classname in UpperCamelCase without modification, and then followed by the function name in lowerCamelCase without modification.
+
+```c_cpp
+crc32_t SEV_crc32(const char *str);
+SEV_EventLoop *SEV_EventLoop_new();
+void *SEV_EventLoop_run(SEV_EventLoop *eventLoop);
+```
 
 # Abbreviations
 Common abbreviations should not be fully capitalized. Likewise, abbreviations should not be separated by underscores either.
