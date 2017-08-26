@@ -15,7 +15,10 @@ Boolean variable names must not be verbs, but may be past tense verbes. This in 
 
 ```c_cpp
 bool m_CallParent; // Not okay. Getter will conflict with function bool callParent()
-bool m_ParentCalled; // Okay, but ambigious
+bool m_ParentCalled; // Okay, but ambigious whether a return status or an expectation
+bool m_PlayVideo; // Not okay. Getter will conflict with function bool playVideo()
+bool m_VideoPlayed; // Okay, but ambigious whether a return status or an expectation
+bool m_PlayedVideo; // Okay, but ambigious whether a return status or an expectation
 bool m_Rectangular; // Okay
 bool m_Rectangle; // Not okay, implies a Rectangle type rather than a bool
 ```
@@ -26,7 +29,7 @@ The following verbs: `is`, `must`, `can`, `will`, `has`, and `should`, however, 
 bool m_HasCalledParent; // Okay
 bool m_ShouldCallParent; // Okay
 bool m_MustCallParent; // Okay
-bool m_IsRectangular; // Okay, but strongly prefer m_Rectangular
+bool m_IsRectangular; // Okay, but prefer m_Rectangular
 bool m_IsRectangle; // Okay
 ```
 
