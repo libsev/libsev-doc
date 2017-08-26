@@ -89,9 +89,9 @@ Use tabs for indentation and spaces for alignment. Tabs may be either 2, 4 or 8 
 ```
 enum░class░Color
 {
-▓▓▓▓Value░░░░░░=░1;
-▓▓▓▓OtherValue░=░2;
-}
+▓▓▓▓Blue░░░░░░=░1;
+▓▓▓▓Turquoise░=░2;
+};
 ```
 
 # Getters and setters
