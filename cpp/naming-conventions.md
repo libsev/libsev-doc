@@ -95,7 +95,7 @@ enum░class░Color
 ```
 
 # Expression spacing an newlines
-Spaces before opening brackets and after closing brackets when preceeded or followed by an operator. No spaces between opening brackets. No spaces between closing brackets. No spaces after an opening bracket. No spaces before a closing bracket. Space after a comma, no space before a comma. Space after a semicolon, no space before a semicolon. No space between unary operators and literals or variables. Space between binary operators and literals or variables. No spaces surrounding dot and arrow operators. Space surrounding arrow symbol for lambda. No space before the round starting bracket of a function call. No space after the last character on a line. Indentation for definitions goes after the hash. Pointer and reference marker belong to the variable name, so no space between them either. Scope brackets go on a new line. Brackets that are part of an expression, such as an array or lambda do not.
+Spaces before opening brackets and after closing brackets when preceeded or followed by an operator. No spaces between opening brackets. No spaces between closing brackets. No spaces after an opening bracket. No spaces before a closing bracket. No spaces between empty brackets, except space between empty curly brackets. Space after a comma, no space before a comma. Space after a semicolon, no space before a semicolon. No space between unary operators and literals or variables. Space between binary operators and literals or variables. No spaces surrounding dot and arrow operators. Space surrounding arrow symbol for lambda. No space before the round starting bracket of a function call. No space after the last character on a line. Indentation for definitions goes after the hash. Pointer and reference marker belong to the variable name, so no space between them either. Scope brackets go on a new line. Brackets that are part of an expression, such as an array or lambda do not.
 
 ```c_cpp
 #ifdef SEV_DEFINES_NULL
@@ -120,13 +120,24 @@ void function(const char *str, const std::string &s, char *const buffer)
 ```
 
 # Auto
-Only use auto when the type is explicitly defined and readable within the same line. Otherwise, be explicit.
+Only use auto when the type is explicitly defined and readable within the same line. Otherwise, be explicit. If in doubt, also be explicit. Inline lambda must use auto. Templates may use auto more liberally, if the type specification is impractical.
+
+```c_cpp
+auto size = str.size(); // This is not okay
+auto num = vec.X + vec.Y; // This is not okay, and you should be ashamed of yourself
+auto eventLoop = std::make_unique<EventLoop>(); // Okay, there is no doubt possible
+auto lambda = []() -> void { }; // Okay
+```
+
 # Null
-Use NULL, not nullptr. The library redefines NULL as nullptr. Nullptr is an ambigious name, since it might just as well mean a pointer to null. Null is what it is.
+Use NULL, not nullptr. The SEv library redefines NULL as nullptr. Nullptr is an oddly ambigious name, since it could just as well mean a pointer to null. Null is what it is.
 
 ```c_cpp
 sev::EventLoop *eventLoop = NULL;
 ```
+
+# Comments
+Comments may appear wherever it seems practical. Final period in a comment may be omitted. For block comments, use one line of 72 slash characters preceeding and following the comment. One or three lines of 72 slash characters may be used to separate different portions of a source file for visual clarity.
 
 # Getters and setters
 Variable names must not be verbs. Do not include `get` as part of the getter function name. Note that while "size" can technically be used as a verb, it is not commonly used as such in programming, as the verb "resize" is more commonly used for such operation. Depending on the context this may vary.
