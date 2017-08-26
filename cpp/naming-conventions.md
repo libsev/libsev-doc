@@ -94,7 +94,7 @@ enum░class░Color
 };
 ```
 
-# Expression spacing an newlines
+# Expression spacing, indentation and new lines
 Spaces before opening brackets and after closing brackets when preceeded or followed by an operator. No spaces between opening brackets. No spaces between closing brackets. No spaces after an opening bracket. No spaces before a closing bracket. No spaces between empty brackets, except space between empty curly brackets. Space after a comma, no space before a comma. Space after a semicolon, no space before a semicolon. No space between unary operators and literals or variables. Space between binary operators and literals or variables. No spaces surrounding dot and arrow operators. Space surrounding arrow symbol for lambda. No space before the round starting bracket of a function call. No space after the last character on a line. Indentation for definitions goes after the hash. Pointer and reference marker belong to the variable name, so no space between them either. Scope brackets go on a new line. Brackets that are part of an expression, such as an array or lambda do not.
 
 ```c_cpp
@@ -116,6 +116,23 @@ void function(const char *str, const std::string &s, char *const buffer)
 	int numberArray[] = { 0, 1, 2, 3 };
 	std::vector<int> vec;
 	vec.push_back(std::min<int>(numberArray[0], 50));
+}
+```
+
+# Switch case indentation
+I don't know, honestly. It gets ugly once you start scoping the cases.
+
+# Variable scopes
+When a scope is purely for object lifetime, and is not the result of an expression, the scope must be preceeded by a semicolon in order to avoid accidentally placing the scope under another expression.
+
+```c_cpp
+void f(int i)
+{
+	while (waiting(i)); // Loop until no longer waiting
+	; { // Lock after the loop. Protected against accidental ommision of semicolon after the previous line
+		std::unique_lock<std::mutex> lock(m);
+		call(i);
+	}
 }
 ```
 
