@@ -60,16 +60,18 @@ int main()
 ```
 Or in one line using the shorthand version provided by the full sev library.
 ```c_cpp
+#include <stream>
 #include <sev/main_event_loop.h>
 
 void f(sev::EventLoop *el, int argc, const char *argv[])
 {
-	// ...
+	std::cout << "Hello world\n";
+	MainEventLoop::stop(EXIT_SUCCESS);
 }
 
-void main(int argc, const char *argv[])
+int main(int argc, const char *argv[])
 {
-	MainEventLoop::main(f, argc, argv);
+	return MainEventLoop::main(f, argc, argv);
 }
 ```
 ## Order of operations
