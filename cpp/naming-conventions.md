@@ -59,6 +59,13 @@ public:
 };
 ```
 
+File names should match the class name or function name and must be in lowercase with underscore separation. Include statements must always use `<...>` for code outside of the project. For third party includes, the capitalization of the file name must match the original third party capitalization.
+
+```c_cpp
+#include <string>
+#include "player_controller.h"
+```
+
 Exposed C-style interfaces of functions start with the namespace in uppercase optionally followed by the classname in UpperCamelCase without modification, and then followed by the function name in lowerCamelCase without modification.
 
 ```c_cpp
