@@ -190,7 +190,7 @@ bool m_IsRectangular; // Not so okay, prefer m_Rectangular
 bool m_IsRectangle; // Okay, may be used to imply that a variant is of type Rectangle, prefer m_Rectangular when referring to the shape
 ```
 
-Choosing between having an object or verb is first, depends on the context.
+Choosing between whether a noun or verb is first, depends on the context.
 
 ```c_cpp
 bool m_ShouldPlayVideo;
