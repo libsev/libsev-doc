@@ -1,5 +1,5 @@
 <!-- TITLE: SEv Library -->
-<!-- SUBTITLE: Simple Event Loop Library -->
+<!-- SUBTITLE: Simple Event Loop Library (libsev) -->
 
 # Overview
 [Repository](https://github.com/libsev/libsev)
@@ -8,8 +8,8 @@
 
 [![Build Status](https://travis-ci.org/libsev/libsev.svg?branch=develop)](https://travis-ci.org/libsev/libsev)
 
-# About libsev
-Libsev is a library to make lots of code run at the same time in a very specific way, focused on simplicity of use and performance.
+# About SEv Library
+SEv Library is used to make lots of code run at the same time in a very specific way, focused on simplicity of use and performance.
 
 The library provides support for
 * Single threaded event loops
