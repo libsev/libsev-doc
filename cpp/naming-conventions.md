@@ -29,6 +29,20 @@ Header guards are in uppercase with underscore separation, are prefixed with the
 #endif /* #ifndef SEV_LITE_EVENT_LOOP_HOOP_H */
 ```
 
+Class and struct names are UpperCamelCase. Pure virtual interface classes start with `I` prefix.
+
+```c_cpp
+class PlayerController { };
+class IStream { };
+struct Point { };
+```
+
+Private member variables are prefixed with `m\_`, global variables with `g\_`, static and anonymous namespace variables with `s\_`, non-local static const variables with `c\_`. Camel case following an underscore always continues with \_UpperCamelCase.
+
+```c_cpp
+```
+
+
 # Abbreviations
 Common abbreviations should not be fully capitalized. Likewise, abbreviations should not be separated by underscores either.
 
