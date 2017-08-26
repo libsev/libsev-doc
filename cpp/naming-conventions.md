@@ -83,11 +83,11 @@ void setIOBuffer(IOBuffer *iOBuffer); // This would be an interface class referr
 #include <i_o_buffer.h> // O Buffer interface
 ```
 
-# Tabs or spaces
+# Tabs and spaces
 Use tabs for indentation and spaces for alignment. Tabs may be either 2, 4 or 8 spaces, it does not really matter. When aligning, the aligned parts must use the same number of tabs.
 
 ```
-enum░class░Colors
+enum░class░Color
 {
 ▓▓▓▓Value░░░░░░=░1;
 ▓▓▓▓OtherValue░=░2;
@@ -135,4 +135,41 @@ bool m_ShouldPlayGame;
 bool m_HasVideoPlayed;
 bool m_HasVideoPaused;
 bool m_HasVideoStopped;
+```
+
+# Enumerations
+Enumerations should have singular name. Bit field enumerations should end with `Options`, `Flags`, `Mask`, or any other non-ambigious name.
+
+```c_cpp
+enum class Color;
+enum class RuntimeOptions;
+enum class RenderFlags;
+```
+
+(This should be part of structure conventions page.) Enumerations should always be specified as `enum class` in the namespace scope when publicly used. Private enums may be specified as `enum` within the class scope.
+
+```c_cpp
+enum class Color
+{
+	Red,
+	Green,
+	Blue
+};
+```
+# Bit field enumerations
+(This should be part of structure conventions page.) Bit field enumerations should provide their own operators as needed.
+
+```c_cpp
+#include <type_traits>
+enum class ColorMask
+{
+	Red =   1 << 1,
+	Green = 1 << 2,
+	Blue =  1 << 3
+};
+inline ColorMask operator | (const ColorMask l, const ColorMask r)
+{
+    return (ColorMask)(static_cast<const std::underlying_type<ColorMask>>(l)
+			| static_cast<const std::underlying_type<ColorMask>>(r));
+}
 ```
