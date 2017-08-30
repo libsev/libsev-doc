@@ -42,3 +42,6 @@
 
 # SEv Interop
 * Header-only interoperability with other event libraries
+
+# SEv Support
+* Application support library for making your life easier
