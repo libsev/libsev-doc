@@ -9,3 +9,6 @@
 * For the IO threadpool, use 4kB stack sizes for simplicity
 	* Although appears that Win32 rounds up to 64kB minimum
 	* https://msdn.microsoft.com/en-us/library/windows/desktop/ms686774(v=vs.85).aspx
+* Half float support
+	* Neat
+	* http://half.sourceforge.net/
