@@ -45,3 +45,4 @@
 
 # SEv Support
 * Application support library for making your life easier
+* High-level utilities connecting all SEv libraries
