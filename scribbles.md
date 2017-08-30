@@ -13,3 +13,4 @@
 	* http://half.sourceforge.net/
 * WinRT
 	* https://msdn.microsoft.com/en-us/magazine/dn342867.aspx
+	* https://msdn.microsoft.com/en-us/library/hh438466.aspx?ranMID=24542&ranEAID=TnL5HPStwNw&ranSiteID=TnL5HPStwNw-nAzPqQl7W78N8KEGQUOOUQ&tduid=(92d5d6a02dd15b087fb9854d4ffb7e4f)(256380)(2459594)(TnL5HPStwNw-nAzPqQl7W78N8KEGQUOOUQ)()
