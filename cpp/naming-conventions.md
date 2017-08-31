@@ -171,6 +171,8 @@ size_t size();
 void setSize(size_t size);
 ```
 
+Keep in mind that a function that gets a value, while taking a parameter, may not qualify as a getter in all cases, as it is not a property, and thus should then not omit the `get` verb.
+
 # Booleans
 Boolean variable names and functions that calculate a boolean must not be verbs, but may be past tense verbes. This in order to avoid getters that sound like functions. Names must also not imply another variable type. Functions which merely return a boolean as success result do not apply to this rule.
 
@@ -228,10 +230,21 @@ bool m_InLove;
 Some of these may be verbs, this is okay too.
 
 ```c_cpp;
-bool m_Enabled;
+bool m_Enabled; // Past tense of 'to enable'
 ```
 
-# Enumerations
+# Function performance cost
+Function names should clearly identify when they take a long time to process. Recommend using verbs such as `calculate`, `process`, `generate`, `build`, and so on.
+
+```c_cpp;
+int size(); // Return size immediately
+int count(); // Counts number of elements, may take a short while
+int calculateSize(); // Takes some time to calculate the size
+int identifier(); // Immediate result
+int lookupIdentifier(); // Relatively fast lookup in a lookup structure
+int findIdentifier(); // Slow search that isn't optimized
+```
+
 # Enumerations
 Enumerations should have singular name. Bit field enumerations should end with `Options`, `Flags`, `Mask`, or any other non-ambigious name.
 
