@@ -164,14 +164,12 @@ sev::EventLoop *eventLoop = NULL;
 Comments may appear wherever it seems practical. Final period in a comment may be omitted. For block comments, use one line of 72 slash characters preceeding and following the comment. One or three lines of 72 slash characters may be used to separate different portions of a source file for visual clarity.
 
 # Getters and setters
-Variable names must not be verbs. Do not include `get` as part of the getter function name. Note that while "size" can technically be used as a verb, it is not commonly used as such in programming, as the verb "resize" is more commonly used for such operation. Depending on the context this may vary.
+Variable names must not be verbs. Do not include `get` as part of the getter function name. Note that while "size" can technically be used as a verb, it is not commonly used as such in programming, as the verb "resize" is more commonly used for such operation. Depending on the context this may vary. Getters and setters must return immediately, otherwise use a different pattern.
 
 ```c_cpp
 size_t size();
 void setSize(size_t size);
 ```
-
-Keep in mind that a function that gets a value, while taking a parameter, may not qualify as a getter in all cases, as it is not a property, and thus should then not omit the `get` verb.
 
 # Booleans
 Boolean variable names and functions that calculate a boolean must not be verbs, but may be past tense verbes. This in order to avoid getters that sound like functions. Names must also not imply another variable type. Functions which merely return a boolean as success result do not apply to this rule.
