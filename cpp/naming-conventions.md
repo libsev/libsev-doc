@@ -206,6 +206,14 @@ bool m_HasVideoPaused;
 bool m_HasVideoStopped;
 ```
 
+Words ending with `-able` are prefered names for booleans over using verbs.
+
+```c_cpp
+bool m_SongPlayable; // Okay
+bool m_CanPlaySong; // Not prefered, prefer to use m_SongPlayable instead
+bool m_PlayableSong; // Not okay, would refer to the playable song rather than the state of being playable
+```
+
 Boolean names may be states of being. These are generally words that can be placed in "I am ..." and "It is ...". In most cases these can possibly start with `Is`, and it is preferred to omit the `Is` as stated previously if there is no ambiguity.
 
 ```c_cpp;
@@ -223,6 +231,7 @@ Some of these may be verbs, this is okay too.
 bool m_Enabled;
 ```
 
+# Enumerations
 # Enumerations
 Enumerations should have singular name. Bit field enumerations should end with `Options`, `Flags`, `Mask`, or any other non-ambigious name.
 
