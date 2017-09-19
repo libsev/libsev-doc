@@ -69,6 +69,18 @@ File names should match the class name or function name and must be in lowercase
 #include "player_controller.h"
 ```
 
+Function pointers always follow the same naming conventions as variables.
+
+```c_cpp
+struct Object
+{
+public:
+	void *(*CreateChild)(char *name);
+	void (*SetValue)(int value);
+	
+};
+```
+
 Exposed C-style interfaces of functions start with the namespace in uppercase optionally followed by the classname in UpperCamelCase without modification, and then followed by the function name in lowerCamelCase without modification.
 
 ```c_cpp
