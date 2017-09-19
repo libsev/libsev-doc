@@ -76,7 +76,7 @@ struct Object
 {
 public:
 	void *(*CreateChild)(char *name);
-	void (*SetValue)(int value);
+	void(*SetValue)(int value);
 	
 };
 ```
